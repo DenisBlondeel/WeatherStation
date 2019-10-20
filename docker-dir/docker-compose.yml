@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  meteo:
+    build:
+      context: ../
+      dockerfile: docker-dir/Dockerfile
+    ports:
+      - 8080:8080
