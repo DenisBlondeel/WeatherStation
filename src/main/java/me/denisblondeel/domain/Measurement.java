@@ -1,16 +1,12 @@
 package me.denisblondeel.domain;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
+//@Entity
+@Document(collection = "measurements")
 public class Measurement{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
     private double temperature;

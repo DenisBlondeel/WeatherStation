@@ -1,10 +1,26 @@
 version: '2'
-
 services:
+  mongo-db:
+    container_name: database
+    restart: always
+    image: mongo
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+      - MONGO_INITDB_DATABASE=weather_database
+      - MONGO_DATA_DIR=./data/db
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ../mongo-volume:/data/db
   meteo:
     container_name: meteo
+    depends_on:
+      - mongo-db
     build:
       context: ../
       dockerfile: docker-dir/Dockerfile
     ports:
       - 9090:8080
+
