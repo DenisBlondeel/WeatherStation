@@ -3,7 +3,7 @@ services:
   mongo-db:
     container_name: database
     restart: always
-    image: mongo
+    image: andresvidal/rpi3-mongodb3
     ports:
       - 27017:27017
     environment:
