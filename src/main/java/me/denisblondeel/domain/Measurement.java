@@ -2,12 +2,14 @@ package me.denisblondeel.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.math.BigInteger;
+
 //@Entity
 @Document(collection = "measurements")
 public class Measurement{
 
     @Id
-    private long id;
+    private BigInteger id;
 
     private double temperature;
     private double humidity;

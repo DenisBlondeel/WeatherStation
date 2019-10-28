@@ -1,4 +1,3 @@
-use weatherdatabase
 db.createUser(
     {
         user: "user",
