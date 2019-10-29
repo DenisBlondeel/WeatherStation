@@ -1,5 +1,7 @@
 package me.denisblondeel.service.dto;
 
+import java.time.LocalDateTime;
+
 public class MeasurementDTO {
 
     private long id;
@@ -7,6 +9,7 @@ public class MeasurementDTO {
     private double temperature;
     private double humidity;
     private double pressure;
+    private LocalDateTime timestamp;
 
     public MeasurementDTO()
     {
@@ -51,6 +54,16 @@ public class MeasurementDTO {
     public void setTemperature(double temperature)
     {
         this.temperature = temperature;
+    }
+
+    public LocalDateTime getTimestamp()
+    {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp)
+    {
+        this.timestamp = timestamp;
     }
 
 }

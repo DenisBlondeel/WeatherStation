@@ -3,6 +3,8 @@ package me.denisblondeel.service.mapper;
 import me.denisblondeel.domain.Measurement;
 import me.denisblondeel.service.dto.MeasurementDTO;
 
+import java.time.LocalDateTime;
+
 public class MeasurementMapper {
 
     public static Measurement toEntity(MeasurementDTO dto)
@@ -11,6 +13,7 @@ public class MeasurementMapper {
         entity.setTemperature(dto.getTemperature());
         entity.setPressure(dto.getPressure());
         entity.setHumidity(dto.getHumidity());
+        entity.setTimestamp(LocalDateTime.now());
         return entity;
     }
 
@@ -20,6 +23,7 @@ public class MeasurementMapper {
         dto.setHumidity(entity.getHumidity());
         dto.setPressure(entity.getPressure());
         dto.setTemperature(entity.getTemperature());
+        dto.setTimestamp(entity.getTimestamp());
         return dto;
     }
 }

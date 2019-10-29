@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
@@ -29,5 +30,43 @@ public class MeasurementResource{
     {
         return service.getLastMeasurement();
     }
+
+    @RequestMapping(value = "/lasthour", method = RequestMethod.GET)
+    public List<MeasurementDTO> lastHour()
+    {
+        return service.getLast12Measurements();
+    }
+
+    @RequestMapping(value= "/minimum_temp_today", method = RequestMethod.GET)
+    public String minimumTempToday()
+    {
+        return service.getMinimumTempToday();
+    }
+
+    @RequestMapping(value= "/minimum_temp_month", method = RequestMethod.GET)
+    public String minimumTempMonth()
+    {
+        return service.getMinimumTempMonth();
+    }
+
+    @RequestMapping(value= "/minimum_temp_year", method = RequestMethod.GET)
+    public String minimumTempYear()
+    {
+        return service.getMinimumTempYear();
+    }
+
+    @RequestMapping(value= "/minimum_hum_year", method = RequestMethod.GET)
+    public String minimumHumYear()
+    {
+        return service.getMinimumHumidityYear();
+    }
+
+    @RequestMapping(value= "/minimum_press_year", method = RequestMethod.GET)
+    public String minimumPressYear()
+    {
+        return service.getMinimumPressureYear();
+    }
+
+
     
 }

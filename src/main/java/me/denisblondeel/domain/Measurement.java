@@ -3,6 +3,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigInteger;
+import java.time.LocalDateTime;
 
 //@Entity
 @Document(collection = "measurements")
@@ -14,6 +15,7 @@ public class Measurement{
     private double temperature;
     private double humidity;
     private double pressure;
+    private LocalDateTime timestamp;
 
     public Measurement()
     {
@@ -58,6 +60,16 @@ public class Measurement{
     public void setTemperature(double temperature)
     {
         this.temperature = temperature;
+    }
+
+    public LocalDateTime getTimestamp()
+    {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp)
+    {
+        this.timestamp = timestamp;
     }
 
 }
