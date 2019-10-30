@@ -2,24 +2,26 @@ package me.denisblondeel.service;
 
 import me.denisblondeel.service.dto.MeasurementDTO;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public interface MeasurementService {
 
-    MeasurementDTO getLastMeasurement();
-
     void addMeasurement(MeasurementDTO measurementDTO);
+
+    MeasurementDTO getLastMeasurement();
 
     List<MeasurementDTO> getLast12Measurements();
 
+    MeasurementDTO getMinimumTemp(LocalDateTime period);
 
-    String getMinimumTempToday();
+    MeasurementDTO getMaximumTemp(LocalDateTime period);
 
-    String getMinimumTempMonth();
+    MeasurementDTO getMinimumHumidity(LocalDateTime period);
 
-    String getMinimumTempYear();
+    MeasurementDTO getMinimumPressure(LocalDateTime period);
 
-    String getMinimumHumidityYear();
+    MeasurementDTO getMaximumHumidity(LocalDateTime period);
 
-    String getMinimumPressureYear();
+    MeasurementDTO getMaximumPressure(LocalDateTime period);
 }

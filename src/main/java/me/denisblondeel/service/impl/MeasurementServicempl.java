@@ -7,6 +7,7 @@ import me.denisblondeel.service.dto.MeasurementDTO;
 import me.denisblondeel.service.mapper.MeasurementMapper;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,32 +44,38 @@ public class MeasurementServicempl implements MeasurementService {
     }
 
     @Override
-    public String getMinimumTempToday()
+    public MeasurementDTO getMinimumTemp(LocalDateTime period)
     {
-        return null;
+        return MeasurementMapper.toDto(repository.findFirstByTimestampBetweenOrderByTemperature(period, LocalDateTime.now()));
     }
 
     @Override
-    public String getMinimumTempMonth()
+    public MeasurementDTO getMaximumTemp(LocalDateTime period)
     {
-        return null;
+        return MeasurementMapper.toDto(repository.findFirstByTimestampBetweenOrderByTemperatureDesc(period, LocalDateTime.now()));
     }
 
     @Override
-    public String getMinimumTempYear()
+    public MeasurementDTO getMinimumHumidity(LocalDateTime period)
     {
-        return null;
+        return MeasurementMapper.toDto(repository.findFirstByTimestampBetweenOrderByHumidityDesc(period, LocalDateTime.now()));
     }
 
     @Override
-    public String getMinimumHumidityYear()
+    public MeasurementDTO getMinimumPressure(LocalDateTime period)
     {
-        return null;
+        return MeasurementMapper.toDto(repository.findFirstByTimestampBetweenOrderByPressureDesc(period, LocalDateTime.now()));
     }
 
     @Override
-    public String getMinimumPressureYear()
+    public MeasurementDTO getMaximumHumidity(LocalDateTime period)
     {
-        return null;
+        return MeasurementMapper.toDto(repository.findFirstByTimestampBetweenOrderByPressure(period, LocalDateTime.now()));
+    }
+
+    @Override
+    public MeasurementDTO getMaximumPressure(LocalDateTime period)
+    {
+        return MeasurementMapper.toDto(repository.findFirstByTimestampBetweenOrderByHumidity(period, LocalDateTime.now()));
     }
 }

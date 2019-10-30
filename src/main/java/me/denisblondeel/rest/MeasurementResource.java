@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,33 +39,63 @@ public class MeasurementResource{
     }
 
     @RequestMapping(value= "/minimum_temp_today", method = RequestMethod.GET)
-    public String minimumTempToday()
+    public MeasurementDTO minimumTempToday()
     {
-        return service.getMinimumTempToday();
+        return service.getMinimumTemp(LocalDateTime.now().minusDays(1));
     }
 
     @RequestMapping(value= "/minimum_temp_month", method = RequestMethod.GET)
-    public String minimumTempMonth()
+    public MeasurementDTO minimumTempMonth()
     {
-        return service.getMinimumTempMonth();
+        return service.getMinimumTemp(LocalDateTime.now().minusMonths(1));
     }
 
     @RequestMapping(value= "/minimum_temp_year", method = RequestMethod.GET)
-    public String minimumTempYear()
+    public MeasurementDTO minimumTempYear()
     {
-        return service.getMinimumTempYear();
+        return service.getMinimumTemp(LocalDateTime.now().minusYears(1));
+    }
+
+    @RequestMapping(value= "/maximum_temp_today", method = RequestMethod.GET)
+    public MeasurementDTO maximumTempDay()
+    {
+        return service.getMaximumTemp(LocalDateTime.now().minusDays(1));
+    }
+
+    @RequestMapping(value= "/maximum_temp_month", method = RequestMethod.GET)
+    public MeasurementDTO maximumTempMonth()
+    {
+        return service.getMaximumTemp(LocalDateTime.now().minusMonths(1));
+    }
+
+    @RequestMapping(value= "/maximum_temp_year", method = RequestMethod.GET)
+    public MeasurementDTO maximumTempYear()
+    {
+        return service.getMaximumTemp(LocalDateTime.now().minusYears(1));
     }
 
     @RequestMapping(value= "/minimum_hum_year", method = RequestMethod.GET)
-    public String minimumHumYear()
+    public MeasurementDTO minimumHumYear()
     {
-        return service.getMinimumHumidityYear();
+        return service.getMinimumHumidity(LocalDateTime.now().minusYears(1));
     }
 
     @RequestMapping(value= "/minimum_press_year", method = RequestMethod.GET)
-    public String minimumPressYear()
+    public MeasurementDTO minimumPressYear()
     {
-        return service.getMinimumPressureYear();
+        return service.getMinimumPressure(LocalDateTime.now().minusYears(1));
+    }
+
+    @RequestMapping(value= "/maximum_hum_year", method = RequestMethod.GET)
+    public MeasurementDTO maximumHumYear()
+    {
+        return service.getMaximumHumidity(LocalDateTime.now().minusYears(1));
+    }
+
+    @RequestMapping(value= "/maximum_press_year", method = RequestMethod.GET)
+    public MeasurementDTO maximumPressYear()
+    {
+        return service.getMaximumPressure(LocalDateTime.now().minusYears(1));
     }
 
 
