@@ -1,5 +1,7 @@
 package me.denisblondeel.service.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.LocalDateTime;
 
 public class MeasurementDTO {
@@ -9,6 +11,7 @@ public class MeasurementDTO {
     private double temperature;
     private double humidity;
     private double pressure;
+    
     private LocalDateTime timestamp;
 
     public MeasurementDTO()
