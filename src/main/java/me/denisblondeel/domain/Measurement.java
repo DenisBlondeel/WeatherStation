@@ -15,6 +15,8 @@ public class Measurement{
     private double temperature;
     private double humidity;
     private double pressure;
+    private double wind;
+    private double rain;
     private LocalDateTime timestamp;
 
     public Measurement()
@@ -22,11 +24,13 @@ public class Measurement{
         //empty constructor
     }
 
-    public Measurement(double temperature, double humidity, double pressure)
+    public Measurement(double temperature, double humidity, double pressure, double rain, double wind)
     {
         setHumidity(humidity);
         setPressure(pressure);
         setTemperature(temperature);
+        setWind(wind);
+        setRain(rain);
     }
 
 
@@ -50,7 +54,13 @@ public class Measurement{
         this.pressure = pressure;
     }
 
+    public void setRain(double rain){this.rain = rain;}
 
+    public double getRain(){return rain;}
+
+    public void setWind(double wind){this.wind = wind;}
+
+    public double getWind(){return wind;}
 
     public double getTemperature()
     {

@@ -14,6 +14,8 @@ public class MeasurementMapper {
         entity.setPressure(dto.getPressure());
         entity.setHumidity(dto.getHumidity());
         entity.setTimestamp(LocalDateTime.now());
+        entity.setRain(dto.getRain());
+        entity.setWind(dto.getWind());
         return entity;
     }
 
@@ -24,6 +26,8 @@ public class MeasurementMapper {
         dto.setPressure(entity.getPressure());
         dto.setTemperature(entity.getTemperature());
         dto.setTimestamp(entity.getTimestamp());
+        dto.setRain(entity.getRain());
+        dto.setWind(entity.getWind());
         return dto;
     }
 }

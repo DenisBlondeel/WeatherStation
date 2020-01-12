@@ -11,7 +11,9 @@ public class MeasurementDTO {
     private double temperature;
     private double humidity;
     private double pressure;
-    
+    private double wind;
+    private double rain;
+
     private LocalDateTime timestamp;
 
     public MeasurementDTO()
@@ -19,11 +21,13 @@ public class MeasurementDTO {
         //empty constructor
     }
 
-    public MeasurementDTO(double temperature, double humidity, double pressure)
+    public MeasurementDTO(double temperature, double humidity, double pressure, double wind, double rain)
     {
         setHumidity(humidity);
         setPressure(pressure);
         setTemperature(temperature);
+        setWind(wind);
+        setRain(rain);
     }
 
 
@@ -47,7 +51,13 @@ public class MeasurementDTO {
         this.pressure = pressure;
     }
 
+    public void setRain(double rain){this.rain = rain;}
 
+    public double getRain(){return rain;}
+
+    public void setWind(double wind){this.wind = wind;}
+
+    public double getWind(){return wind;}
 
     public double getTemperature()
     {
