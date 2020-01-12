@@ -11,7 +11,7 @@ services:
       - 15672:15672
     volumes:
       - ./rabbitmq_configs/enabled_plugins:/etc/rabbitmq/enabled_plugins
-      -./rabbitmq_configs/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - ./rabbitmq_configs/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
   mongo-db:
     container_name: database
     restart: always
