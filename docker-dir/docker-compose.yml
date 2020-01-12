@@ -2,13 +2,15 @@ version: '2'
 services:
   rabbit:
     container_name: message_broker
-    image: 'rabbitmq:3-management'
+    image: 'rabbitmq'
     environment:
       RABBITMQ_DEFAULT_USER: "rabbitmq"
       RABBITMQ_DEFAULT_PASS: "rabbitmq"
     ports:
       - 5672:5672
       - 15672:15672
+    volumes:
+      - ./enabled_plugins:/etc/rabbitmq/enabled_plugins
   mongo-db:
     container_name: database
     restart: always
