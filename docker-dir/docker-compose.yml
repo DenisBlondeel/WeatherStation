@@ -9,9 +9,9 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
+      - 1883:1883
     volumes:
       - ./rabbitmq_configs/enabled_plugins:/etc/rabbitmq/enabled_plugins
-      - ./rabbitmq_configs/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
   mongo-db:
     container_name: database
     restart: always
