@@ -33,6 +33,7 @@ public class MqListener {
     {
         try
         {
+            System.out.println(content);
             service.addMeasurement(mapper.readValue(content, MeasurementDTO.class));
         }
         catch(Exception e)
