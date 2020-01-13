@@ -34,7 +34,7 @@ public class MqListener {
         try
         {
             System.out.println(content);
-            service.addMeasurement(mapper.readValue(content, MeasurementDTO.class));
+            service.addMeasurement(mapper.readValue(content.replaceAll(",", " "), MeasurementDTO.class));
         }
         catch(Exception e)
         {
