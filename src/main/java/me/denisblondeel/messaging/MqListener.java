@@ -29,12 +29,12 @@ public class MqListener {
     private MeasurementService service;
 
     @RabbitListener(queues = "weather_report")
-    public void processMessage(String content)
+    public void processMessage(byte[] content)
     {
         try
         {
-            System.out.println(content);
-            service.addMeasurement(mapper.readValue(content.replaceAll(",", " "), MeasurementDTO.class));
+            System.out.println(new String(content));
+            service.addMeasurement(mapper.readValue(new String(content), MeasurementDTO.class));
         }
         catch(Exception e)
         {
