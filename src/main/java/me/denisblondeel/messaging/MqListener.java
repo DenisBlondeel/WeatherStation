@@ -28,7 +28,7 @@ public class MqListener {
     @Autowired
     private MeasurementService service;
 
-    @RabbitListener(queues = "weather_report")
+    @RabbitListener(queues = "weatherReport")
     public void processMessage(byte[] content)
     {
         try
