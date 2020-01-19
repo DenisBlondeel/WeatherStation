@@ -22,7 +22,7 @@ public class RabbitConfig {
 
     @Bean
     Binding financeBinding(Queue weatherReport, TopicExchange exchange) {
-        return BindingBuilder.bind(weatherReport).to(exchange).with("#s");
+        return BindingBuilder.bind(weatherReport).to(exchange).with("#");
     }
 
 
