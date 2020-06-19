@@ -3,8 +3,9 @@ package me.denisblondeel.service.impl;
 import me.denisblondeel.domain.Measurement;
 import me.denisblondeel.repository.MeasurementRepository;
 import me.denisblondeel.service.MeasurementService;
-import me.denisblondeel.service.dto.MeasurementDTO;
-import me.denisblondeel.service.mapper.MeasurementMapper;
+import me.denisblondeel.domain.MeasurementDTO;
+import me.denisblondeel.mapper.MeasurementMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -16,6 +17,9 @@ public class MeasurementServicempl implements MeasurementService {
 
     private final MeasurementRepository repository;
 
+    @Autowired
+    private MeasurementMapper mapper;
+
     public MeasurementServicempl(MeasurementRepository repository)
     {
         this.repository = repository;
@@ -25,7 +29,7 @@ public class MeasurementServicempl implements MeasurementService {
     public MeasurementDTO getLastMeasurement()
     {
         Measurement m = repository.findTopByOrderByIdDesc();
-        return MeasurementMapper.toDto(m);
+        return mapper.toDto(m);
     }
 
     @Override

@@ -5,11 +5,9 @@ import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 import me.denisblondeel.service.MeasurementService;
-import me.denisblondeel.service.dto.MeasurementDTO;
-import me.denisblondeel.service.mapper.MeasurementMapper;
+import me.denisblondeel.domain.MeasurementDTO;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,6 +1,6 @@
 package me.denisblondeel.service;
 
-import me.denisblondeel.service.dto.MeasurementDTO;
+import me.denisblondeel.domain.MeasurementDTO;
 
 import java.time.LocalDateTime;
 import java.util.List;

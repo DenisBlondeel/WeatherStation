@@ -1,4 +1,4 @@
-package me.denisblondeel.service.dto;
+package me.denisblondeel.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

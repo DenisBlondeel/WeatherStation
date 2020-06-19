@@ -1,7 +1,7 @@
-package me.denisblondeel.rest;
+package me.denisblondeel.controller;
 
 import me.denisblondeel.service.MeasurementService;
-import me.denisblondeel.service.dto.MeasurementDTO;
+import me.denisblondeel.domain.MeasurementDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,10 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
-public class MeasurementResource{
+public class MeasurementController {
 
 
     @Autowired

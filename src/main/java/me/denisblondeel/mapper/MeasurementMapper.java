@@ -1,7 +1,7 @@
-package me.denisblondeel.service.mapper;
+package me.denisblondeel.mapper;
 
 import me.denisblondeel.domain.Measurement;
-import me.denisblondeel.service.dto.MeasurementDTO;
+import me.denisblondeel.domain.MeasurementDTO;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
