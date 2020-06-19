@@ -2,9 +2,11 @@ package me.denisblondeel.service.mapper;
 
 import me.denisblondeel.domain.Measurement;
 import me.denisblondeel.service.dto.MeasurementDTO;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
+@Component
 public class MeasurementMapper {
 
     public static Measurement toEntity(MeasurementDTO dto)
